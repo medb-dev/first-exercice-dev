@@ -1,0 +1,1 @@
+document.querySelector(".title").innerHTML="Heelo from index.js";
