@@ -3,11 +3,75 @@
 
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Dev Exercice</title>
 </head>
 
 <body>
-    <h1 class="title"></h1>
+    <div class="card">
+        <table>
+            <thead>
+                <tr class="head">
+                    <th scope="col">ID</th>
+                    <th scope="col">Date de creation</th>
+                    <th scope="col">Etat</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Nom d'utilisateur</th>
+                    <th scope="col">Matricule</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">12345678</td>
+                    <td>01/06/2021</td>
+                    <td>
+                        <div style="background-color: rgb(238, 193, 43);">En validation</div>
+                    </td>
+                    <td>Taha</td>
+                    <td>Mohamed</td>
+                    <td>mtaha</td>
+                    <td>2583</td>
+                    <td>
+                        <div><i class="delete-btn fa-solid fa-trash-can"></i></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td scope="row">12345678</td>
+                    <td>01/06/2021</td>
+                    <td>
+                        <div style="background-color: rgb(90, 214, 90);">Valide</div>
+                    </td>
+                    <td>Taha</td>
+                    <td>Mohamed</td>
+                    <td>mtaha</td>
+                    <td>2583</td>
+                    <td>
+                        <div><i class="delete-btn fa-solid fa-trash-can"></i></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td scope="row">12345678</td>
+                    <td>01/06/2021</td>
+                    <td>
+                        <div style="background-color: rgb(226, 74, 74);">Rejete</div>
+                    </td>
+                    <td>Taha</td>
+                    <td>Mohamed</td>
+                    <td>mtaha</td>
+                    <td>2583</td>
+                    <td>
+                        <div><i class="delete-btn fa-solid fa-trash-can"></i></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <script src="./main.js"></script>
 </body>
 

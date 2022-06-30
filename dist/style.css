@@ -1,0 +1,125 @@
+*,
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+}
+
+.card {
+    width: 95%;
+    margin: 30px auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.17);
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    height: max-content;
+    border-collapse: collapse;
+    font-size: calc(7.2px + .3vw);
+}
+
+tbody {
+    margin-top: 10px;
+}
+
+tr th {
+    width: 100%;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    height: 30px;
+    text-align: left;
+    font-weight: 700;
+}
+
+tr td {
+    height: 40px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+thead th:nth-child(1) {
+    width: 7%;
+}
+
+thead th:nth-child(2) {
+    width: 10%;
+}
+
+thead th:nth-child(3) {
+    width: 11%;
+    text-align: center;
+}
+
+thead th:nth-child(4) {
+    width: 8%;
+}
+
+thead th:nth-child(5) {
+    width: 8%;
+}
+
+thead th:nth-child(6) {
+    width: 11%;
+}
+
+thead th:nth-child(7) {
+    width: 10%;
+}
+
+thead th:nth-child(8) {
+    width: 5%;
+    text-align: center;
+}
+
+tbody td:nth-child(3) div {
+    width: 70%;
+    margin: 5px auto;
+    padding: 8px 10px;
+    text-align: center;
+    color: white;
+    font-size: calc(7px + .3vw);
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+tbody td:nth-child(8) div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: calc(10px + .3vw);
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        margin: 30px auto;
+        padding: 20px 0px;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.17);
+    }
+
+    table {
+        width: 95%;
+        margin: 0px auto;
+    }
+
+    tbody td:nth-child(3) div {
+        margin: 0px auto;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    tbody td:nth-child(8) div {
+        font-size: calc(13px + .3vw);
+    }
+}
+
+
+/* animations */
+.delete-btn:hover {
+    color: rgb(228, 74, 74);
+    transition: all .2s ease-in-out;
+}
