@@ -7,12 +7,30 @@ body {
 
 .card {
     width: 95%;
-    margin: 30px auto;
+    margin: 15px auto;
     padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.17);
 }
 
+.card-2 {
+    padding: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+.card button {
+    width: 160px;
+    padding: 8px 10px;
+    margin-right: 0px;
+    text-align: center;
+    border: none;
+    background-color: gold;
+    color: rgb(34, 34, 34);
+    font-size: calc(10px + .3vw);
+    font-weight: 700;
+    border-radius: 5px;
+}
 table {
     width: 100%;
     table-layout: fixed;
@@ -95,7 +113,7 @@ tbody td:nth-child(8) div {
 @media (max-width: 768px) {
     .card {
         width: 100%;
-        margin: 30px auto;
+        margin: 15px auto;
         padding: 20px 0px;
         border-radius: 10px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.17);
@@ -115,10 +133,19 @@ tbody td:nth-child(8) div {
     tbody td:nth-child(8) div {
         font-size: calc(13px + .3vw);
     }
+.card button {
+    margin-right: 20px;
+}
 }
 
 
-/* animations */
+/* hover */
+
+.card button:hover {
+    color: white;
+    background-color: rgb(165, 165, 165);
+    transition: all .25s ease-in-out;
+}
 .delete-btn:hover {
     color: rgb(228, 74, 74);
     transition: all .2s ease-in-out;
