@@ -27,3 +27,26 @@ let users = [
     registrationNumber: "3576",
   },
 ];
+
+//Selectors
+
+const modale_add_user = document.querySelector(".modale-add-user");
+const btn_enregistrer = document.querySelector("#btn-enregistrer");
+const btn_ajouter = document.querySelector("#btn-ajouter");
+
+//events
+btn_ajouter.addEventListener("click", (event) => {
+   modale_add_user.style.display = "block";
+   //clear fields
+   event.preventDefault();
+  });
+  
+  modale_add_user.addEventListener("click", (event) => {
+    modale_add_user.style.display = "none";
+    //clear fields
+  event.preventDefault();
+});
+
+btn_enregistrer.addEventListener("click", (event) => {
+  event.preventDefault();
+});
