@@ -102,7 +102,6 @@ function renderToDOM(list) {
       </button>
       </td>
       `;
-
     users_list.appendChild(row);
   });
 }
@@ -110,10 +109,4 @@ function renderToDOM(list) {
 function deleteUser(id) {
   const index = users.findIndex((item) => item.id == id);
   users.splice(index, 1);
-  console.log("delete btn clicked");
-  const row = document.getElementById(id);
-  row.classList.add("slideRight");
-  setTimeout(() => {
-    row.style.display = "none";
-  }, 400);
 }
