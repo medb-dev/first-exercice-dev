@@ -12,6 +12,51 @@
 </head>
 
 <body>
+    <div class="modale-add-user">
+        <div class="container">
+            <div class="container-header">
+                <h2>Ajout d'utilisateurs</h2>
+            </div>
+            <div class="container-body">
+                <form>
+                    <div class="form-group">
+                        <label for="nom">Nom
+                            <input type="text" class="form-control" id="nom" placeholder="Nom">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prenom
+                            <input type="text" class="form-control" id="prenom" placeholder="Prenom">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="etat">Etat
+                            <input type="text" class="form-control" id="etat" placeholder="Etat">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Nom d'utilisateur
+                            <input type="text" class="form-control" id="username"
+                                placeholder="Nom d'utilisateur">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="date-creation">Date de creation
+                            <input type="date" class="form-control" id="date-creation">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="matricule">Matricule
+                            <input type="text" class="form-control" id="matricule"
+                                placeholder="Matricule">
+                        </label>
+                    </div>
+                    <button type="submit" id="btn-enregistrer">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modale-users">
     <div class="card">
         <table>
             <thead>
@@ -69,13 +114,14 @@
                         <div><i class="delete-btn fa-solid fa-trash-can"></i></div>
                     </td>
                 </tr>
-                
             </tbody>
         </table>
     </div>
     <div class="card card-2">
-        <button>Ajouter utilisateur</button>
+        <button id="btn-ajouter">Ajouter utilisateur</button>
     </div>
+    </div>
+
     <script src="./main.js"></script>
 </body>
 
