@@ -28,25 +28,92 @@ let users = [
   },
 ];
 
-//Selectors
+window.addEventListener("load", (event) => {
+  renderToDOM(users);
+});
 
+//Selectors
+//
 const modale_add_user = document.querySelector(".modale-add-user");
+const blur_bg = document.querySelector("#blur-bg");
 const btn_enregistrer = document.querySelector("#btn-enregistrer");
 const btn_ajouter = document.querySelector("#btn-ajouter");
+const users_list = document.querySelector("#users-list");
+// Inputs
+const nom = document.querySelector("#nom");
+const prenom = document.querySelector("#prenom");
+const username = document.querySelector("#username");
+const etat = document.querySelector("#etat");
+const date_creation = document.querySelector("#date-creation");
+const matricule = document.querySelector("#matricule");
 
 //events
 btn_ajouter.addEventListener("click", (event) => {
-   modale_add_user.style.display = "block";
-   //clear fields
-   event.preventDefault();
-  });
-  
-  modale_add_user.addEventListener("click", (event) => {
-    modale_add_user.style.display = "none";
-    //clear fields
+  modale_add_user.style.display = "block";
+  //clear fields
+  event.preventDefault();
+});
+
+blur_bg.addEventListener("click", (event) => {
+  modale_add_user.style.display = "none";
+  //clear fields
   event.preventDefault();
 });
 
 btn_enregistrer.addEventListener("click", (event) => {
+  modale_add_user.style.display = "none";
+  //clear fields
   event.preventDefault();
 });
+
+// Methods
+function getID() {
+  let random_id = Math.floor(Math.random() * 10000000) + 100000000;
+  users.forEach((user) => {
+    if (user.id === random_id) getID();
+  });
+  return random_id;
+}
+function getStatusClass(status) {
+  return status === "Validé"
+    ? "valide"
+    : status === "Rejeté"
+    ? "rejected"
+    : "on-validation";
+}
+
+function renderToDOM(list) {
+  list.forEach((user) => {
+    let row = document.createElement("tr");
+    row.id = "" + user.id;
+    row.innerHTML = `
+      <td scope="row">${user.id}</td>
+      <td>${new Date(user.createdDate).toLocaleDateString("en-US")}</td>
+      <td>
+      <div class="${getStatusClass(user.status)}">${user.status}</div>
+      </td>
+      <td>${user.firstName}</td>
+      <td>${user.lastName}</td>
+      <td>${user.userName}</td>
+      <td>${user.registrationNumber}</td>
+      <td>
+      <button onclick="deleteUser(${user.id})">
+      <i class="delete-btn fa-solid fa-trash-can"></i>
+      </button>
+      </td>
+      `;
+
+    users_list.appendChild(row);
+  });
+}
+
+function deleteUser(id) {
+  const index = users.findIndex((item) => item.id == id);
+  users.splice(index, 1);
+  console.log("delete btn clicked");
+  const row = document.getElementById(id);
+  row.classList.add("slideRight");
+  setTimeout(() => {
+    row.style.display = "none";
+  }, 400);
+}
