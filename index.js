@@ -49,21 +49,21 @@ const matricule = document.querySelector("#matricule");
 
 //events
 btn_ajouter.addEventListener("click", (event) => {
+  event.preventDefault();
   modale_add_user.style.display = "block";
   //clear fields
-  event.preventDefault();
 });
 
 blur_bg.addEventListener("click", (event) => {
+  event.preventDefault();
   modale_add_user.style.display = "none";
   //clear fields
-  event.preventDefault();
 });
 
 btn_enregistrer.addEventListener("click", (event) => {
+  event.preventDefault();
   modale_add_user.style.display = "none";
   //clear fields
-  event.preventDefault();
 });
 
 // Methods
@@ -83,6 +83,7 @@ function getStatusClass(status) {
 }
 
 function renderToDOM(list) {
+  users_list.innerHTML = "";
   list.forEach((user) => {
     let row = document.createElement("tr");
     row.id = "" + user.id;
@@ -102,6 +103,7 @@ function renderToDOM(list) {
       </button>
       </td>
       `;
+
     users_list.appendChild(row);
   });
 }
@@ -109,4 +111,9 @@ function renderToDOM(list) {
 function deleteUser(id) {
   const index = users.findIndex((item) => item.id == id);
   users.splice(index, 1);
+  renderToDOM(users);
+}
+
+function addUser() {
+  renderToDOM(users);
 }
