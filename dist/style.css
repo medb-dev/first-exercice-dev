@@ -6,10 +6,40 @@ body {
     line-height: 1.5;
     /* position: relative; */
 }
+.modale-users {
+    width: 100vw;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modale-add-user {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modale-add-user .container {
+
+    width: 100%;
+    height: 400px;
+    /* margin: 15px auto; */
+    /* padding: 20px 30px; */
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.17);
+}
 
 .card {
     width: 95%;
-        margin: 15px 20px;
+    margin: 15px 20px;
     padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.17);
@@ -17,7 +47,7 @@ body {
 
 .card-2 {
     width: calc(95% + 20px);
-        padding: 20px 5px 20px 30px;
+    padding: 20px 5px 20px 30px;
     display: flex;
     justify-content: right;
 }
@@ -25,11 +55,11 @@ body {
 .card button {
     width: 160px;
     padding: 8px 0px;
-    margin-right: 0px;
+    margin-right: 20px;
     text-align: center;
     border: none;
     background-color: #FFA500;
-        color: rgb(48, 48, 48);
+    color: rgb(48, 48, 48);
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     font-size: calc(10px + .3vw);
     font-weight: 700;
@@ -139,48 +169,14 @@ tbody td:nth-child(8) div {
 
     tbody td:nth-child(8) div {
         font-size: calc(13px + .3vw);
+
     }
 }
-.card button {
-    margin-right: 20px;
-}
-/* modale add user */
-.modale-users {
-    width: 100vw;
-    height: 100%;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.modale-add-user {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modale-add-user .container {
-
-    width: 100%;
-    height: 400px;
-    /* margin: 15px auto; */
-    /* padding: 20px 30px; */
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.17);
-}
-
 /* hover */
 
 .card button:hover {
     color: rgb(34, 34, 34);
-        background-color: rgb(255, 193, 23);
+    background-color: rgb(255, 193, 23);
         transition: all .15s ease-in-out;
 }
 
