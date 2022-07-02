@@ -45,13 +45,20 @@ const prenom = document.querySelector("#prenom");
 const username = document.querySelector("#username");
 const etat = document.querySelector("#etat");
 const date_creation = document.querySelector("#date-creation");
+date_creation.valueAsDate = new Date();
 const matricule = document.querySelector("#matricule");
 
 //events
 btn_ajouter.addEventListener("click", (event) => {
   event.preventDefault();
-  modale_add_user.style.display = "block";
+  resetInputsStyle();
   //clear fields
+  nom.value = "";
+  prenom.value = "";
+  username.value = "";
+  date_creation.valueAsDate = new Date();
+  matricule.value = "";
+  modale_add_user.style.display = "block";
 });
 
 blur_bg.addEventListener("click", (event) => {
@@ -62,8 +69,10 @@ blur_bg.addEventListener("click", (event) => {
 
 btn_enregistrer.addEventListener("click", (event) => {
   event.preventDefault();
-  modale_add_user.style.display = "none";
-  //clear fields
+  if (
+    inputsValidation(nom.value, prenom.value, username.value, matricule.value)
+  )
+    addUser(); // Add User To List And Render To Dom
 });
 
 // Methods
@@ -74,10 +83,11 @@ function getID() {
   });
   return random_id;
 }
+
 function getStatusClass(status) {
-  return status === "Validé"
+  return status == "Validé"
     ? "valide"
-    : status === "Rejeté"
+    : status == "Rejeté"
     ? "rejected"
     : "on-validation";
 }
@@ -85,6 +95,9 @@ function getStatusClass(status) {
 function renderToDOM(list) {
   users_list.innerHTML = "";
   list.forEach((user) => {
+    console.log(user.status);
+    console.log(getStatusClass(user.status));
+    console.log("---------------");
     let row = document.createElement("tr");
     row.id = "" + user.id;
     row.innerHTML = `
@@ -115,5 +128,79 @@ function deleteUser(id) {
 }
 
 function addUser() {
+  //Add To Users List
+  users.push({
+    id: getID().toString(),
+    createdDate: date_creation.value,
+    status: etat.value,
+    firstName: prenom.value,
+    lastName: nom.value,
+    userName: username.value,
+    registrationNumber: matricule.value,
+  });
+
+  modale_add_user.style.display = "none";
+  // Render To DOM
   renderToDOM(users);
+}
+
+function inputsValidation(lastName, firstName, userName, registrationNumber) {
+  resetInputsStyle();
+  let isValid = true;
+  if (
+    lastName.lenght < 3 ||
+    lastName.lenght > 30 ||
+    !isNaN(lastName) ||
+    !lastName.trim()
+  ) {
+    nom.style.borderColor = "#FF0000";
+    isValid = false;
+  }
+  if (
+    firstName.lenght < 3 ||
+    firstName.lenght > 30 ||
+    !isNaN(firstName) ||
+    !firstName.trim()
+  ) {
+    prenom.style.borderColor = "#FF0000";
+    isValid = false;
+  }
+  if (
+    userName.lenght < 3 ||
+    userName.lenght > 30 ||
+    !isNaN(userName) ||
+    !userName.trim()
+  ) {
+    username.style.borderColor = "#FF0000";
+    isValid = false;
+  }
+  if (parseInt(registrationNumber) <= 0 || !registrationNumber.trim()) {
+    // console.log(!isNaN(registrationNumber));
+    console.log(!registrationNumber.trim());
+    console.log(parseInt(registrationNumber) <= 0);
+
+    matricule.style.borderColor = "#FF0000";
+    isValid = false;
+  }
+
+  //
+  if (isValid) {
+    nom.style.borderColor = "#5BE881";
+    username.style.borderColor = "#5BE881";
+    prenom.style.borderColor = "#5BE881";
+    matricule.style.borderColor = "#5BE881";
+    etat.style.borderColor = "#5BE881";
+    date_creation.style.borderColor = "#5BE881";
+  }
+  setTimeout(() => {}, 1500);
+  return isValid;
+}
+
+function resetInputsStyle() {
+  nom.style.borderColor = "#E0E0E0";
+  prenom.style.borderColor = "#E0E0E0";
+  username.style.borderColor = "#E0E0E0";
+  etat.style.borderColor = "#E0E0E0";
+  date_creation.style.borderColor = "#E0E0E0";
+  matricule.style.borderColor = "#E0E0E0";
 }
