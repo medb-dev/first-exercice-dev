@@ -218,7 +218,7 @@ function resetInputsStyle() {
 // Loading Table
 function loadingTable() {
   users_list.innerHTML = "";
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 3; i++) {
     let row = document.createElement("tr");
     row.innerHTML = `
       <td>
