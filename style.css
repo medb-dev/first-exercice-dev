@@ -20,11 +20,11 @@ body {
     display: none;
     display: flex;
     flex-direction: column;
-        align-items: center;
-    
-    }
-    
-    #blur-bg {
+    align-items: center;
+
+}
+
+#blur-bg {
     position: fixed;
     z-index: 99;
     left: 0;
@@ -226,6 +226,7 @@ tbody td:nth-child(8) button:hover i {
     font-size: calc(10px + .3vw);
     font-weight: 400;
 }
+
 .modale-add-user .card-footer {
     display: flex;
     justify-content: right;
@@ -252,15 +253,16 @@ tbody td:nth-child(8) button:hover i {
         font-size: calc(10px + .3vw);
         font-weight: 400;
     }
-.modale-add-user .card-body .form-group select {
-    width: 99%;
-    height: 32px;
-    padding: 5px;
-    border: 1px solid #E0E0E0;
-    border-radius: 5px;
-    font-size: calc(10px + .3vw);
-    font-weight: 400;
-}
+
+    .modale-add-user .card-body .form-group select {
+        width: 99%;
+        height: 32px;
+        padding: 5px;
+        border: 1px solid #E0E0E0;
+        border-radius: 5px;
+        font-size: calc(10px + .3vw);
+        font-weight: 400;
+    }
 }
 
 @media (max-width: 1191px) {
@@ -274,9 +276,9 @@ tbody td:nth-child(8) button:hover i {
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.17);
     }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .card-1 {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin-top: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+    .card-1 {
+        margin-top: 20px;
+    }
 
     table {
         width: 95%;
@@ -312,5 +314,29 @@ tbody td:nth-child(8) button:hover i {
     to {
         transform: translateX(200%);
         opacity: 0;
+    }
+}
+
+.loader {
+    background-color: #e7e7e7;
+    height: 15px;
+    width: 100%;
+    border-radius: 7px;
+}
+
+td .loader {
+    background-color: #e4e4e4;
+    background: linear-gradient(100deg,
+            rgba(231, 231, 231, 0.5) 40%,
+            rgba(231, 231, 231, 0.7) 50%,
+            rgba(231, 231, 231, 0.5) 60%);
+    background-size: 200% 100%;
+    background-position-x: 100%;
+    animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+    to {
+        background-position-x: -30%;
     }
 }

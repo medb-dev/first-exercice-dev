@@ -27,10 +27,20 @@ let users = [
     registrationNumber: "3576",
   },
 ];
-
-window.addEventListener("load", (event) => {
-  renderToDOM(users);
+document.addEventListener("DOMContentLoaded", () =>{
+loadingTable();
+ setTimeout(() => {
+   renderToDOM(users);
+ }, 2000);
 });
+// window.onload = function () {
+//    setTimeout(() => {
+//      loadingTable();
+//    }, 3000);
+// };
+// window.addEventListener("load", (event) => {
+//   renderToDOM(users);
+// });
 
 //Selectors
 //
@@ -203,4 +213,39 @@ function resetInputsStyle() {
   etat.style.borderColor = "#E0E0E0";
   date_creation.style.borderColor = "#E0E0E0";
   matricule.style.borderColor = "#E0E0E0";
+}
+
+// Loading Table
+function loadingTable() {
+  users_list.innerHTML = "";
+  for (let i = 0; i < 4; i++) {
+    let row = document.createElement("tr");
+    row.innerHTML = `
+      <td>
+      <div class="loader"></div>
+      </td>
+      <td>
+      <div class="loader"></div>
+      </td>
+      <td >
+      <div class="loader"></div>
+      </td>
+      <td>
+      <div class="loader"></div>
+      </td>
+      <td>
+      <div class="loader"></div>
+      </td>
+      <td>
+      <div class="loader"></div>
+      </td>
+      <td>
+      <div class="loader"></div>
+      </td>
+      <td>
+      <div class="loader"></div>
+      </td>
+      `;
+    users_list.appendChild(row);
+  }
 }
