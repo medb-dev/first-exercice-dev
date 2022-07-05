@@ -33,14 +33,6 @@ loadingTable();
    renderToDOM(users);
  }, 2000);
 });
-// window.onload = function () {
-//    setTimeout(() => {
-//      loadingTable();
-//    }, 3000);
-// };
-// window.addEventListener("load", (event) => {
-//   renderToDOM(users);
-// });
 
 //Selectors
 //
